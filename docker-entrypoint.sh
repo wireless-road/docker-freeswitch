@@ -12,7 +12,7 @@ if [ "$1" = 'freeswitch' ]; then
 		done
 	fi
 
-	exec freeswitch freeswitch -u freeswitch -g freeswitch -c \
+	exec freeswitch -u freeswitch -g freeswitch -c \
 		-sounds /sounds -recordings /recordings -conf /etc/freeswitch \
 		-certs /certs -db /db -scripts /scripts	-log /tmp
 fi
