@@ -13,16 +13,21 @@ This is a fork of [docker-freeswitch](https://github.com/kovalyshyn/docker-frees
 
 ##### Run SIP server 
 
+Clone this project:
+```
+$ git clone https://github.com/wireless-road/docker-freeswitch.git
+$ cd docker-freeswitch
+```
 Build docker image:
 ```
 $ docker build -t fs .
 ```
 and run it:
 ```
-$ docker run -it --privileged=true --net="host" --name=FS -v /home/al/Downloads/docker-freeswitch-wr/freeswitch_config_example:/etc/freeswitch fs
+$ docker run -it --privileged=true --net="host" --name=FS -v /home/user/docker-freeswitch/freeswitch_config_example:/etc/freeswitch fs
 ```
 
-where `home/al/Downloads/docker-freeswitch-wr/freeswitch_config_example` is path to `freeswitch_config_example` folder of this repo.
+where `/home/user/docker-freeswitch/freeswitch_config_example` is path to `freeswitch_config_example` folder of this repo.
 This config defines three client's IDs: 1000, 1001 and 1002 with passwords same as ID. Server address set to 192.168.0.118. You have to change it to IP address of your server in `dialplan/default/20-interconnect.xml` and `directory/private.xml` files.
 
 ##### Run two or more SIP clients.
